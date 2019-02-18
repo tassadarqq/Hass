@@ -1,0 +1,1 @@
+nmcli con mod “HassOS default” ipv4.addresses “172.25.X.10/24 172.25.X.254”
