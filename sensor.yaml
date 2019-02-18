@@ -1,0 +1,23 @@
+platform: caiyun
+    #name: CaiYun
+    #scan_interval: 1200
+    #latitude: 30.000
+    #longitude: 120.000
+    monitored_conditions: # Optional
+      - weather
+      - temperature
+      - humidity
+      - cloud_rate
+      - pressure
+      - wind_direction
+      - wind_speed
+      - local_precipitation
+      - nearest_precipitation
+      - precipitation_distance
+      - aqi
+      - pm25
+      - pm10
+      - o3
+      - co
+      - no2
+      - so2
