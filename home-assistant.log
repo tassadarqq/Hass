@@ -1,0 +1,347 @@
+2019-02-15 15:25:21 WARNING (MainThread) [homeassistant.loader] You are using a custom component for sensor.caiyun which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you do experience issues with Home Assistant.
+2019-02-15 15:25:21 ERROR (MainThread) [homeassistant.components.device_tracker] Unable to load /config/known_devices.yaml: Config file not found: /config/known_devices.yaml
+2019-02-15 15:25:22 ERROR (SyncWorker_4) [homeassistant.components.notify.ios] The notify.ios platform was loaded but no devices exist! Please check the documentation at https://home-assistant.io/ecosystem/ios/notifications/ for more information
+2019-02-18 11:42:42 ERROR (MainThread) [homeassistant.helpers.entity] Update for sensor.openwrt_router_kbyte_sec_sent fails
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 924, in _wrap_create_connection
+    await self._loop.create_connection(*args, **kwargs))
+  File "uvloop/loop.pyx", line 1879, in create_connection
+  File "uvloop/loop.pyx", line 1858, in uvloop.loop.Loop.create_connection
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/homeassistant/helpers/entity.py", line 221, in async_update_ha_state
+    await self.async_device_update()
+  File "/usr/local/lib/python3.6/site-packages/homeassistant/helpers/entity.py", line 347, in async_device_update
+    await self.async_update()
+  File "/usr/local/lib/python3.6/site-packages/homeassistant/components/sensor/upnp.py", line 220, in async_update
+    new_value = await self._async_fetch_value()
+  File "/usr/local/lib/python3.6/site-packages/homeassistant/components/sensor/upnp.py", line 252, in _async_fetch_value
+    return await self._device.async_get_total_bytes_sent()
+  File "/usr/local/lib/python3.6/site-packages/homeassistant/components/upnp/device.py", line 149, in async_get_total_bytes_sent
+    return await self._igd_device.async_get_total_bytes_sent()
+  File "/usr/local/lib/python3.6/site-packages/async_upnp_client/profiles/igd.py", line 99, in async_get_total_bytes_sent
+    result = await action.async_call()
+  File "/usr/local/lib/python3.6/site-packages/async_upnp_client/client.py", line 505, in async_call
+    await self.service.requester.async_http_request('POST', url, headers, body)
+  File "/usr/local/lib/python3.6/site-packages/async_upnp_client/client.py", line 70, in async_http_request
+    body_type=body_type)
+  File "/usr/local/lib/python3.6/site-packages/async_upnp_client/aiohttp.py", line 103, in async_do_http_request
+    async with self._session.request(method, url, headers=headers, data=body) as response:
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/client.py", line 1005, in __aenter__
+    self._resp = await self._coro
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/client.py", line 476, in _request
+    timeout=real_timeout
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 522, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 854, in _create_connection
+    req, traces, timeout)
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 992, in _create_direct_connection
+    raise last_exc
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 974, in _create_direct_connection
+    req=req, client_error=client_error)
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 931, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host 192.168.123.1:5000 ssl:None [Connection refused]
+2019-02-18 11:42:42 ERROR (MainThread) [homeassistant.helpers.entity] Update for sensor.openwrt_router_packets_received fails
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 924, in _wrap_create_connection
+    await self._loop.create_connection(*args, **kwargs))
+  File "uvloop/loop.pyx", line 1879, in create_connection
+  File "uvloop/loop.pyx", line 1858, in uvloop.loop.Loop.create_connection
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/homeassistant/helpers/entity.py", line 221, in async_update_ha_state
+    await self.async_device_update()
+  File "/usr/local/lib/python3.6/site-packages/homeassistant/helpers/entity.py", line 347, in async_device_update
+    await self.async_update()
+  File "/usr/local/lib/python3.6/site-packages/homeassistant/components/sensor/upnp.py", line 163, in async_update
+    self._state = await self._device.async_get_total_packets_received()
+  File "/usr/local/lib/python3.6/site-packages/homeassistant/components/upnp/device.py", line 154, in async_get_total_packets_received
+    return await self._igd_device.async_get_total_packets_received()
+  File "/usr/local/lib/python3.6/site-packages/async_upnp_client/profiles/igd.py", line 110, in async_get_total_packets_received
+    result = await action.async_call()
+  File "/usr/local/lib/python3.6/site-packages/async_upnp_client/client.py", line 505, in async_call
+    await self.service.requester.async_http_request('POST', url, headers, body)
+  File "/usr/local/lib/python3.6/site-packages/async_upnp_client/client.py", line 70, in async_http_request
+    body_type=body_type)
+  File "/usr/local/lib/python3.6/site-packages/async_upnp_client/aiohttp.py", line 103, in async_do_http_request
+    async with self._session.request(method, url, headers=headers, data=body) as response:
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/client.py", line 1005, in __aenter__
+    self._resp = await self._coro
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/client.py", line 476, in _request
+    timeout=real_timeout
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 522, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 854, in _create_connection
+    req, traces, timeout)
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 992, in _create_direct_connection
+    raise last_exc
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 974, in _create_direct_connection
+    req=req, client_error=client_error)
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 931, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host 192.168.123.1:5000 ssl:None [Connection refused]
+2019-02-18 11:42:42 ERROR (MainThread) [homeassistant.helpers.entity] Update for sensor.openwrt_router_kbyte_sec_received fails
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 924, in _wrap_create_connection
+    await self._loop.create_connection(*args, **kwargs))
+  File "uvloop/loop.pyx", line 1879, in create_connection
+  File "uvloop/loop.pyx", line 1858, in uvloop.loop.Loop.create_connection
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/homeassistant/helpers/entity.py", line 221, in async_update_ha_state
+    await self.async_device_update()
+  File "/usr/local/lib/python3.6/site-packages/homeassistant/helpers/entity.py", line 347, in async_device_update
+    await self.async_update()
+  File "/usr/local/lib/python3.6/site-packages/homeassistant/components/sensor/upnp.py", line 220, in async_update
+    new_value = await self._async_fetch_value()
+  File "/usr/local/lib/python3.6/site-packages/homeassistant/components/sensor/upnp.py", line 250, in _async_fetch_value
+    return await self._device.async_get_total_bytes_received()
+  File "/usr/local/lib/python3.6/site-packages/homeassistant/components/upnp/device.py", line 145, in async_get_total_bytes_received
+    return await self._igd_device.async_get_total_bytes_received()
+  File "/usr/local/lib/python3.6/site-packages/async_upnp_client/profiles/igd.py", line 89, in async_get_total_bytes_received
+    result = await action.async_call()
+  File "/usr/local/lib/python3.6/site-packages/async_upnp_client/client.py", line 505, in async_call
+    await self.service.requester.async_http_request('POST', url, headers, body)
+  File "/usr/local/lib/python3.6/site-packages/async_upnp_client/client.py", line 70, in async_http_request
+    body_type=body_type)
+  File "/usr/local/lib/python3.6/site-packages/async_upnp_client/aiohttp.py", line 103, in async_do_http_request
+    async with self._session.request(method, url, headers=headers, data=body) as response:
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/client.py", line 1005, in __aenter__
+    self._resp = await self._coro
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/client.py", line 476, in _request
+    timeout=real_timeout
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 522, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 854, in _create_connection
+    req, traces, timeout)
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 992, in _create_direct_connection
+    raise last_exc
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 974, in _create_direct_connection
+    req=req, client_error=client_error)
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 931, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host 192.168.123.1:5000 ssl:None [Connection refused]
+2019-02-18 11:42:42 ERROR (MainThread) [homeassistant.helpers.entity] Update for sensor.openwrt_router_bytes_received fails
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 924, in _wrap_create_connection
+    await self._loop.create_connection(*args, **kwargs))
+  File "uvloop/loop.pyx", line 1879, in create_connection
+  File "uvloop/loop.pyx", line 1858, in uvloop.loop.Loop.create_connection
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/homeassistant/helpers/entity.py", line 221, in async_update_ha_state
+    await self.async_device_update()
+  File "/usr/local/lib/python3.6/site-packages/homeassistant/helpers/entity.py", line 347, in async_device_update
+    await self.async_update()
+  File "/usr/local/lib/python3.6/site-packages/homeassistant/components/sensor/upnp.py", line 159, in async_update
+    self._state = await self._device.async_get_total_bytes_received()
+  File "/usr/local/lib/python3.6/site-packages/homeassistant/components/upnp/device.py", line 145, in async_get_total_bytes_received
+    return await self._igd_device.async_get_total_bytes_received()
+  File "/usr/local/lib/python3.6/site-packages/async_upnp_client/profiles/igd.py", line 89, in async_get_total_bytes_received
+    result = await action.async_call()
+  File "/usr/local/lib/python3.6/site-packages/async_upnp_client/client.py", line 505, in async_call
+    await self.service.requester.async_http_request('POST', url, headers, body)
+  File "/usr/local/lib/python3.6/site-packages/async_upnp_client/client.py", line 70, in async_http_request
+    body_type=body_type)
+  File "/usr/local/lib/python3.6/site-packages/async_upnp_client/aiohttp.py", line 103, in async_do_http_request
+    async with self._session.request(method, url, headers=headers, data=body) as response:
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/client.py", line 1005, in __aenter__
+    self._resp = await self._coro
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/client.py", line 476, in _request
+    timeout=real_timeout
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 522, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 854, in _create_connection
+    req, traces, timeout)
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 992, in _create_direct_connection
+    raise last_exc
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 974, in _create_direct_connection
+    req=req, client_error=client_error)
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 931, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host 192.168.123.1:5000 ssl:None [Connection refused]
+2019-02-18 11:42:42 ERROR (MainThread) [homeassistant.helpers.entity] Update for sensor.openwrt_router_packets_sec_sent fails
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 924, in _wrap_create_connection
+    await self._loop.create_connection(*args, **kwargs))
+  File "uvloop/loop.pyx", line 1879, in create_connection
+  File "uvloop/loop.pyx", line 1858, in uvloop.loop.Loop.create_connection
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/homeassistant/helpers/entity.py", line 221, in async_update_ha_state
+    await self.async_device_update()
+  File "/usr/local/lib/python3.6/site-packages/homeassistant/helpers/entity.py", line 347, in async_device_update
+    await self.async_update()
+  File "/usr/local/lib/python3.6/site-packages/homeassistant/components/sensor/upnp.py", line 220, in async_update
+    new_value = await self._async_fetch_value()
+  File "/usr/local/lib/python3.6/site-packages/homeassistant/components/sensor/upnp.py", line 276, in _async_fetch_value
+    return await self._device.async_get_total_packets_sent()
+  File "/usr/local/lib/python3.6/site-packages/homeassistant/components/upnp/device.py", line 158, in async_get_total_packets_sent
+    return await self._igd_device.async_get_total_packets_sent()
+  File "/usr/local/lib/python3.6/site-packages/async_upnp_client/profiles/igd.py", line 120, in async_get_total_packets_sent
+    result = await action.async_call()
+  File "/usr/local/lib/python3.6/site-packages/async_upnp_client/client.py", line 505, in async_call
+    await self.service.requester.async_http_request('POST', url, headers, body)
+  File "/usr/local/lib/python3.6/site-packages/async_upnp_client/client.py", line 70, in async_http_request
+    body_type=body_type)
+  File "/usr/local/lib/python3.6/site-packages/async_upnp_client/aiohttp.py", line 103, in async_do_http_request
+    async with self._session.request(method, url, headers=headers, data=body) as response:
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/client.py", line 1005, in __aenter__
+    self._resp = await self._coro
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/client.py", line 476, in _request
+    timeout=real_timeout
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 522, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 854, in _create_connection
+    req, traces, timeout)
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 992, in _create_direct_connection
+    raise last_exc
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 974, in _create_direct_connection
+    req=req, client_error=client_error)
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 931, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host 192.168.123.1:5000 ssl:None [Connection refused]
+2019-02-18 11:42:42 ERROR (MainThread) [homeassistant.helpers.entity] Update for sensor.openwrt_router_bytes_sent fails
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 924, in _wrap_create_connection
+    await self._loop.create_connection(*args, **kwargs))
+  File "uvloop/loop.pyx", line 1879, in create_connection
+  File "uvloop/loop.pyx", line 1858, in uvloop.loop.Loop.create_connection
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/homeassistant/helpers/entity.py", line 221, in async_update_ha_state
+    await self.async_device_update()
+  File "/usr/local/lib/python3.6/site-packages/homeassistant/helpers/entity.py", line 347, in async_device_update
+    await self.async_update()
+  File "/usr/local/lib/python3.6/site-packages/homeassistant/components/sensor/upnp.py", line 161, in async_update
+    self._state = await self._device.async_get_total_bytes_sent()
+  File "/usr/local/lib/python3.6/site-packages/homeassistant/components/upnp/device.py", line 149, in async_get_total_bytes_sent
+    return await self._igd_device.async_get_total_bytes_sent()
+  File "/usr/local/lib/python3.6/site-packages/async_upnp_client/profiles/igd.py", line 99, in async_get_total_bytes_sent
+    result = await action.async_call()
+  File "/usr/local/lib/python3.6/site-packages/async_upnp_client/client.py", line 505, in async_call
+    await self.service.requester.async_http_request('POST', url, headers, body)
+  File "/usr/local/lib/python3.6/site-packages/async_upnp_client/client.py", line 70, in async_http_request
+    body_type=body_type)
+  File "/usr/local/lib/python3.6/site-packages/async_upnp_client/aiohttp.py", line 103, in async_do_http_request
+    async with self._session.request(method, url, headers=headers, data=body) as response:
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/client.py", line 1005, in __aenter__
+    self._resp = await self._coro
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/client.py", line 476, in _request
+    timeout=real_timeout
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 522, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 854, in _create_connection
+    req, traces, timeout)
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 992, in _create_direct_connection
+    raise last_exc
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 974, in _create_direct_connection
+    req=req, client_error=client_error)
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 931, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host 192.168.123.1:5000 ssl:None [Connection refused]
+2019-02-18 11:42:42 ERROR (MainThread) [homeassistant.helpers.entity] Update for sensor.openwrt_router_packets_sec_received fails
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 924, in _wrap_create_connection
+    await self._loop.create_connection(*args, **kwargs))
+  File "uvloop/loop.pyx", line 1879, in create_connection
+  File "uvloop/loop.pyx", line 1858, in uvloop.loop.Loop.create_connection
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/homeassistant/helpers/entity.py", line 221, in async_update_ha_state
+    await self.async_device_update()
+  File "/usr/local/lib/python3.6/site-packages/homeassistant/helpers/entity.py", line 347, in async_device_update
+    await self.async_update()
+  File "/usr/local/lib/python3.6/site-packages/homeassistant/components/sensor/upnp.py", line 220, in async_update
+    new_value = await self._async_fetch_value()
+  File "/usr/local/lib/python3.6/site-packages/homeassistant/components/sensor/upnp.py", line 274, in _async_fetch_value
+    return await self._device.async_get_total_packets_received()
+  File "/usr/local/lib/python3.6/site-packages/homeassistant/components/upnp/device.py", line 154, in async_get_total_packets_received
+    return await self._igd_device.async_get_total_packets_received()
+  File "/usr/local/lib/python3.6/site-packages/async_upnp_client/profiles/igd.py", line 110, in async_get_total_packets_received
+    result = await action.async_call()
+  File "/usr/local/lib/python3.6/site-packages/async_upnp_client/client.py", line 505, in async_call
+    await self.service.requester.async_http_request('POST', url, headers, body)
+  File "/usr/local/lib/python3.6/site-packages/async_upnp_client/client.py", line 70, in async_http_request
+    body_type=body_type)
+  File "/usr/local/lib/python3.6/site-packages/async_upnp_client/aiohttp.py", line 103, in async_do_http_request
+    async with self._session.request(method, url, headers=headers, data=body) as response:
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/client.py", line 1005, in __aenter__
+    self._resp = await self._coro
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/client.py", line 476, in _request
+    timeout=real_timeout
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 522, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 854, in _create_connection
+    req, traces, timeout)
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 992, in _create_direct_connection
+    raise last_exc
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 974, in _create_direct_connection
+    req=req, client_error=client_error)
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 931, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host 192.168.123.1:5000 ssl:None [Connection refused]
+2019-02-18 11:42:42 ERROR (MainThread) [homeassistant.helpers.entity] Update for sensor.openwrt_router_packets_sent fails
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 924, in _wrap_create_connection
+    await self._loop.create_connection(*args, **kwargs))
+  File "uvloop/loop.pyx", line 1879, in create_connection
+  File "uvloop/loop.pyx", line 1858, in uvloop.loop.Loop.create_connection
+ConnectionRefusedError: [Errno 111] Connection refused
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/homeassistant/helpers/entity.py", line 221, in async_update_ha_state
+    await self.async_device_update()
+  File "/usr/local/lib/python3.6/site-packages/homeassistant/helpers/entity.py", line 347, in async_device_update
+    await self.async_update()
+  File "/usr/local/lib/python3.6/site-packages/homeassistant/components/sensor/upnp.py", line 165, in async_update
+    self._state = await self._device.async_get_total_packets_sent()
+  File "/usr/local/lib/python3.6/site-packages/homeassistant/components/upnp/device.py", line 158, in async_get_total_packets_sent
+    return await self._igd_device.async_get_total_packets_sent()
+  File "/usr/local/lib/python3.6/site-packages/async_upnp_client/profiles/igd.py", line 120, in async_get_total_packets_sent
+    result = await action.async_call()
+  File "/usr/local/lib/python3.6/site-packages/async_upnp_client/client.py", line 505, in async_call
+    await self.service.requester.async_http_request('POST', url, headers, body)
+  File "/usr/local/lib/python3.6/site-packages/async_upnp_client/client.py", line 70, in async_http_request
+    body_type=body_type)
+  File "/usr/local/lib/python3.6/site-packages/async_upnp_client/aiohttp.py", line 103, in async_do_http_request
+    async with self._session.request(method, url, headers=headers, data=body) as response:
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/client.py", line 1005, in __aenter__
+    self._resp = await self._coro
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/client.py", line 476, in _request
+    timeout=real_timeout
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 522, in connect
+    proto = await self._create_connection(req, traces, timeout)
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 854, in _create_connection
+    req, traces, timeout)
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 992, in _create_direct_connection
+    raise last_exc
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 974, in _create_direct_connection
+    req=req, client_error=client_error)
+  File "/usr/local/lib/python3.6/site-packages/aiohttp/connector.py", line 931, in _wrap_create_connection
+    raise client_error(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorError: Cannot connect to host 192.168.123.1:5000 ssl:None [Connection refused]

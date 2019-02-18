@@ -1,0 +1,40 @@
+group.outside:
+  friendly_name: 室外
+sun.sun:
+  friendly_name: 日照
+
+sensor.caiyun_weather:
+  friendly_name: 天气
+sensor.caiyun_temperature:
+  friendly_name: 室外气温
+sensor.caiyun_humidity:
+  friendly_name: 室外湿度
+sensor.caiyun_cloud_rate:
+  friendly_name: 云量
+sensor.caiyun_pressure:
+  friendly_name: 气压
+sensor.caiyun_wind_direction:
+  friendly_name: 风向
+sensor.caiyun_wind_speed:
+  friendly_name: 风速
+sensor.caiyun_local_precipitation:
+  friendly_name: 降水强度
+sensor.caiyun_nearest_precipitation:
+  friendly_name: 附近降水强度
+sensor.caiyun_precipitation_distance:
+  friendly_name: 附近降水距离
+sensor.caiyun_aqi:
+  friendly_name: 空气指数
+sensor.caiyun_pm25:
+  friendly_name: 室外颗粒物
+  homebridge_name: 空气质量
+sensor.caiyun_pm10:
+  friendly_name: 室外大颗粒物
+sensor.caiyun_o3:
+  friendly_name: 室外臭氧
+sensor.caiyun_co:
+  friendly_name: 室外一氧化碳
+sensor.caiyun_no2:
+  friendly_name: 室外二氧化氮
+sensor.caiyun_so2:
+  friendly_name: 室外二氧化硫

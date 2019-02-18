@@ -1,0 +1,39 @@
+outside:
+    entities:
+      - sun.sun
+      - sensor.caiyun_weather
+      - sensor.caiyun_temperature
+      - sensor.caiyun_humidity
+      - sensor.caiyun_cloud_rate
+      - sensor.caiyun_pressure
+      - sensor.caiyun_wind_direction
+      - sensor.caiyun_wind_speed
+      - sensor.caiyun_local_precipitation
+      - sensor.caiyun_nearest_precipitation
+      - sensor.caiyun_precipitation_distance
+      - sensor.caiyun_aqi
+      - sensor.caiyun_pm25
+      - sensor.caiyun_pm10
+      - sensor.caiyun_o3
+      - sensor.caiyun_co
+      - sensor.caiyun_no2
+      - sensor.caiyun_so2
+
+NetWork:
+    entities:
+     - sensor.openwrt_router_packets_sent
+     - sensor.openwrt_router_packets_received
+
+     - sensor.openwrt_router_packets_sec_sent
+     - sensor.openwrt_router_packets_sec_received
+
+     - sensor.openwrt_router_bytes_sent
+     - sensor.openwrt_router_bytes_received
+
+     - sensor.openwrt_router_kbyte_sec_sent
+     - sensor.openwrt_router_kbyte_sec_received
+
+Photo:
+    entities:
+     - sensor.qin_fu_fan_de_iphone_battery_state
+     - sensor.qin_fu_fan_de_iphone_battery_level
